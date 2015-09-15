@@ -556,7 +556,6 @@ function getAtomStyleForToken(grammar: string, tags: number[], token: OmniSharp.
 
 function setGrammar(grammar: FirstMate.Grammar): FirstMate.Grammar {
     if (!grammar['omnisharp'] && any(Omni.supportedExtensions, ext => any((<any>grammar).fileTypes, ft => trimLeft(ext, '.') === ft))) {
-        debugger;
         var newGrammar = new Grammar(this, grammar);
         each(grammar, (x, i) => has(grammar, i) && (newGrammar[i] = x));
         grammar = newGrammar;
