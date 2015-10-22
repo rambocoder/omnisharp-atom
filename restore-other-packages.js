@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var season = require('season');
-var ATOM_HOME = path.join(process.env.HOME, '.atom');
+var ATOM_HOME = path.join(process.env.HOME || process.env.USERPROFILE, '.atom');
 
 if (!fs.existsSync(path.join(ATOM_HOME, 'config.cson.bak'))) {
     throw new Error('backup does not exist, stopping, you might want to backup first!');
